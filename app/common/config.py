@@ -1,0 +1,19 @@
+import json
+
+with open("config.json", "r",  encoding='utf-8') as f:
+  config = json.load(f)
+
+NCP_ACCESS_KEY = config['NCP']['ACCESS_KEY_ID']
+NCP_SECRET_KEY = config['NCP']['SECRET_KEY']
+NCP_SMS_SERVICE_ID = config['NCP']['SMS_SERVICE_ID']
+NCP_EMAIL_SERVICE_ID = config['NCP']['EMAIL_SERVICE_ID']
+NCP_SMS_API_URL = config['NCP']['SMS_API_URL']
+NCP_EMAIL_API_URL = config['NCP']['EMAIL_API_URL']
+
+MODUSIGN_API_URL = config['MODUSIGN']['API_URL']
+MODUSIGN_CLIENT_ID = config['MODUSIGN']['CLIENT_ID']
+MODUSIGN_CLIENT_SECRET = config['MODUSIGN']['CLIENT_SECRET']
+MODUSIGN_REDIRECT_URI = config['MODUSIGN']['REDIRECT_URI']
+
+ACCESS_SECRET_KEY = config['ACCESS_SECRET_KEY']
+REFRESH_SECRET_KEY = config['REFRESH_SECRET_KEY']
