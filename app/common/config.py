@@ -3,6 +3,14 @@ import json
 with open("config.json", "r",  encoding='utf-8') as f:
   config = json.load(f)
 
+NICE_SECRET_KEY = config['NICE']['SECRET_KEY']
+NICE_API_URL = config['NICE']['API_URL']
+NICE_CLIENT_ID = config['NICE']['CLIENT_ID']
+NICE_PRODUCT_ID = config['NICE']['PRODUCT_ID']
+ACCESS_TOKEN = config['NICE']['ACCESS_TOKEN']
+
+CLIENTS = config['CLIENTS']
+
 NCP_ACCESS_KEY = config['NCP']['ACCESS_KEY_ID']
 NCP_SECRET_KEY = config['NCP']['SECRET_KEY']
 NCP_SMS_SERVICE_ID = config['NCP']['SMS_SERVICE_ID']

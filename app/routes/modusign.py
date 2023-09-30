@@ -8,7 +8,6 @@ router = APIRouter()
 
 @router.get("/oauth")
 def oauth(code: str, state: str, error: str | None = None):
-  ''''''
   url = f"{MODUSIGN_API_URL}/oauth/token"
   headers = {
     "Accept": "application/json",

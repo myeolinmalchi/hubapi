@@ -3,7 +3,7 @@ import requests
 from app.models.sms import *
 
 from app.common.config import *
-from common import *
+from .common import *
 
 
 def send_message(body: SMSRequestBody) -> SMSResponseBody:

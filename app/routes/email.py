@@ -8,7 +8,7 @@ from app.utils.common import get_request_headers
 
 router = APIRouter()
 
-@router.post("/mails", dependencies=Depends(JWTBearer()))
+@router.post("/", dependencies=[Depends(JWTBearer())])
 async def send_email(req: Request):
   body = await req.json()
   uri = f"/mails"
@@ -16,7 +16,7 @@ async def send_email(req: Request):
   res = requests.post(f"{NCP_EMAIL_API_URL}/{uri}", json=body, headers=headers)
   return JSONResponse(res.json(), res.status_code)
 
-@router.get("/mails/requests", dependencies=Depends(JWTBearer()))
+@router.get("/requests", dependencies=[Depends(JWTBearer())])
 async def check_mail_request(req: Request):
   params = req.query_params
   uri = f"/mails/requests"
@@ -24,7 +24,7 @@ async def check_mail_request(req: Request):
   res = requests.post(f"{NCP_EMAIL_API_URL}/{uri}", params=params, headers=headers)
   return JSONResponse(res.json(), res.status_code)
 
-@router.get("/mails/requests/{requestId}/mails", dependencies=Depends(JWTBearer()))
+@router.get("/requests/{requestId}/mails", dependencies=[Depends(JWTBearer())])
 async def check_mail_list(requestId: int, req: Request):
   params = req.query_params
   uri = f"/mails/requests/{requestId}/mails"

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert titlehere.</title>
+  </head>
+  <body>
+    <main>
+      <form
+        name="form"
+        method="post"
+        id="form"
+        action="https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb"
+      >
+        <input type="hidden" name="m" value="service" />
+        <input type="hidden" name="enc_data" value="{{ enc_data }}" />
+        <input
+          type="hidden"
+          name="integrity_value"
+          value="{{ integrity_value }}"
+        />
+        <input
+          type="hidden"
+          name="token_version_id"
+          value="{{ token_version_id }}"
+        />
+      </form>
+    </main>
+    <script>
+      window.onload = () => {
+        const form = document.getElementById('form');
+        form.submit();
+      };
+    </script>
+  </body>
+</html>
